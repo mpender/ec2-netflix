@@ -93,4 +93,12 @@ execute 'docker-ec2 start' do
   action :run
 end
 
+# Add to /etc/rc.local to help overcome reboots
+execute 'add docker command to ' do
+  command 'echo docker run -p 53:53/udp -p 80:80 -p 443:443 -d aws/netflix-ec2 >> /etc/rc.local'
+  creates '/tmp/something'
+  action :run
+end
+
+
 
