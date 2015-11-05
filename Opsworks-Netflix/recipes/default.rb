@@ -24,6 +24,13 @@ package 'git' do
   action :install
 end
 
+#Start the docker daemon
+service 'docker' do
+  supports :status => true, :restart => true, :reload => true
+  action [:start, :enable]
+end
+
+
 #Create the source files : preprocess
 cookbook_file '/home/ec2-user/preprocess.py' do
   source 'preprocess.py'
