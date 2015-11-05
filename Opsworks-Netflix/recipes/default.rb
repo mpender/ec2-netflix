@@ -33,7 +33,7 @@ cookbook_file '/home/ec2-user/preprocess.py' do
 end
 
 #Create the source files : Dockerfile
-cookbook_file 'Dockefile' do
+cookbook_file '/home/ec2-user/Dockefile' do
   source 'Dockefile'
   owner 'root'
   group 'root'
