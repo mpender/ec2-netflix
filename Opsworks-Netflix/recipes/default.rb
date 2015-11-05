@@ -75,6 +75,7 @@ end
 execute 'preprocess.py' do
   command 'python /home/ec2-user/preprocess.py'
   creates '/tmp/something'
+  cwd 'home/ec2-user/'
   action :run
 end
 
